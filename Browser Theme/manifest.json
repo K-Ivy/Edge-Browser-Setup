@@ -1,0 +1,28 @@
+{
+    "name": "Everforest Theme",
+    "version": "1",
+    "description": "Everforest theme for Edge.",
+    "manifest_version": 3,
+    "theme": {
+        "colors": {
+            "frame": [ 39, 46, 51 ],
+            "frame_inactive": [ 39, 46, 51 ],
+            "frame_incognito": [ 39, 46, 51 ],
+            "frame_incognito_inactive": [ 39, 46, 51 ],
+            "toolbar": [ 39, 46, 51 ],
+            "toolbar_button_icon": [ 214, 204, 183 ],
+            "omnibox_text": [ 157, 169, 160 ],
+            "omnibox_background": [ 45, 53, 59 ],
+            "tab_text": [ 167, 192, 128 ],
+            "tab_background_text": [ 211, 198, 170 ],
+            "tab_background_text_inactive": [ 211, 198, 170 ],
+            "tab_background_text_incognito": [ 211, 198, 170 ],
+            "tab_background_text_incognito_inactive": [ 211, 198, 170 ],
+            "bookmark_text": [ 214, 204, 183 ],
+            "ntp_background": [ 39, 46, 51 ],
+            "ntp_text": [ 211, 198, 170 ],
+            "ntp_link": [ 167, 192, 128 ],
+            "button_background": [ 39, 46, 51 ]
+        }
+    }
+}

@@ -1,0 +1,354 @@
+Windows Registry Editor Version 5.00
+
+; Documentation: https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies
+; Active: edge://policy/
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+
+; --- Setup ---
+
+; Disables first-run welcome experience.
+"HideFirstRunExperience"=dword:00000001
+
+; Disables automatic import of data at first run.
+"AutoImportAtFirstRun"=dword:00000004
+
+; Prevents importing data from other browsers on each launch.
+"ImportOnEachLaunch"=dword:00000000
+
+
+; --- Account & Sync ---
+
+; Default profile.
+"EdgeDefaultProfileEnabled"="Default"
+
+; Prevents sign-on to Edge with OS MS account + stops account-related services like sync and SSO.
+"BrowserSignin"=dword:00000000
+
+; Prevents sign-on to Microsoft personal sites using OS MS Account.
+"MSAWebSiteSSOUsingThisProfileAllowed"=dword:00000000
+
+; Disable sign-on to work/school sites using Edge profile.
+"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
+
+; Disables synchronization of data using Microsoft sync services.
+"SyncDisabled"=dword:00000001
+
+; Disables sign-on on Microsoft sites signing into Edge with said MS account.
+"WebToBrowserSignInEnabled"=dword:00000000
+"SeamlessWebToBrowserSignInEnabled"=dword:00000000
+
+; Disables proactive authentication ~ "connects the signed-in user identity with Microsoft Bing, MSN and Copilot services for a smooth and consistent sign-in experience".
+"ProactiveAuthWorkflowEnabled"=dword:00000000
+
+; Disallows prompts to switch to appropriate profile when Edge detects a personal or work link.
+"GuidedSwitchEnabled"=dword:00000000
+
+; Disables roaming profile support ~ "The settings stored in Microsoft Edge profiles (favorites and preferences) are also saved to a file stored in the Roaming user profile folder".
+"RoamingProfileSupportEnabled"=dword:00000000
+
+
+; --- Telemetry & Data Collection ---
+
+; Disables diagnostic data collection and telemetry.
+"DiagnosticData"=dword:00000000
+
+; Disables personalization data reporting.
+"PersonalizationReportingEnabled"=dword:00000000
+
+; Disables third-party search engine results page telemetry ~ "Captures the searches that a user does on third-party search providers without identifying the person".
+"Edge3PSerpTelemetryEnabled"=dword:00000000
+
+; Disallow windows indexing Edge browsing data stored locally on device for searching.
+"LocalBrowserDataShareEnabled"=dword:00000000
+
+; Disables experimentation and A/B testing service.
+"ExperimentationAndConfigurationServiceControl"=dword:00000000
+
+; Dont share the OS Regional format.
+"DefaultShareAdditionalOSRegionSetting"=dword:00000002
+
+
+; --- Security/Privacy Related  ---
+
+; Disables remote debugging
+"RemoteDebuggingAllowed"=dword:00000000
+
+; - Restrict WebRTC local IP exposure:
+;   default_public_interface_only >
+;     - Does not expose local IP address,
+;     - Allows WebRTC over UDP on public interface only,
+;     - Works with most video conferencing apps.
+;   disable_non_proxied_udp >
+;     - Does not expose local IP address,
+;     - Forces TCP unless proxy supports UDP.
+"WebRtcLocalhostIpHandling"="default_public_interface_only"
+
+; Disables exceptions for the associated ad providers that have met Microsoft's privacy standards (balanced mode).
+"AdsTransparencyEnabled"=dword:00000000
+
+; Disable developer tools
+; "DeveloperToolsAvailability"=dword:00000002
+
+; - Tracking prevention level (adjust in-browser):
+;   0=Off
+;   1=Basic
+;   2=Balanced
+;   3=Strict
+; "TrackingPrevention"=dword:00000003
+
+; Prevent bypassing of SmartScreen prompts for sites.
+; "PreventSmartScreenPromptOverride"=dword:00000001
+
+; Prevent bypassing of SmartScreen warnings about downloads.
+; "PreventSmartScreenPromptOverrideForFiles"=dword:00000001
+
+; - Https-Only Mode: (enable in-browser).
+;   allowed >
+;     - Don't restrict users' HTTPS-Only Mode setting
+;   disallowed >
+;     - Disable HTTPS-Only Mode
+;   force_enabled >
+;     - Force enable HTTPS-Only Mode in Strict mode
+;   force_balanced_enabled >
+;     - Force enable HTTPS-Only Mode in Balanced Mode
+; "HttpsOnlyMode"="force_enabled"
+; "HttpsUpgradesEnabled"=dword:00000001
+
+; - DNS-over-HTTPS:
+;   Note: Edge disables the in-browser toggle if any registry tweak
+;   is applied so would need to apply via the below.
+;     off       = Disable DNS-over-HTTPS
+;     automatic = Enable DoH with insecure fallback
+;     secure    = Enable DoH only (no fallback)
+; "DnsOverHttpsMode"="secure"
+;
+; Some DNS:
+;
+; Quad9 (Malware + Privacy)
+; "DnsOverHttpsTemplates"="https://dns.quad9.net/dns-query"
+;
+; AdGuard (Filtered)
+; "DnsOverHttpsTemplates"="https://dns.adguard-dns.com/dns-query"
+;
+; Cloudflare
+; "DnsOverHttpsTemplates"="https://cloudflare-dns.com/dns-query"
+;
+; Cloudflare (Malware Protection)
+; "DnsOverHttpsTemplates"="https://security.cloudflare-dns.com/dns-query"
+
+
+; --- Site Permissions ---
+
+; Disables location access (adjust in-browser).
+; "DefaultGeolocationSetting"=dword:00000002
+
+; Disables clipboard access (adjust in-browser).
+; "DefaultClipboardSetting"=dword:00000002
+
+; Disables notification access (adjust in-browser).
+; "DefaultNotificationsSetting"=dword:00000002
+
+; Disables JavaScript (adjust in-browser).
+; "DefaultJavaScriptSetting"=dword:00000002
+
+; Disables Images (adjust in-browser).
+; "DefaultImagesSetting"=dword:00000002
+
+; Disables all cookies (adjust in-browser).
+; "DefaultCookiesSetting"=dword:00000002
+
+; Disables serial port access.
+"DefaultSerialGuardSetting"=dword:00000002
+
+; Disables USB devices access.
+"DefaultWebUsbGuardSetting"=dword:00000002
+
+; Disables Bluetooth devices access.
+"DefaultWebBluetoothGuardSetting"=dword:00000002
+
+; Disables HID devices access.
+"DefaultWebHidGuardSetting"=dword:00000002
+
+; Disables idle detection.
+"DefaultIdleDetectionSetting"=dword:00000002
+
+; Disables site query for available payment methods.
+"PaymentMethodQueryEnabled"=dword:00000000
+
+; Don't allow any site to request write access to files and directories.
+"DefaultFileSystemWriteGuardSetting"=dword:00000002
+
+
+; --- Resource Control ---
+
+; Disables startup boost (pre-loading browser).
+"StartupBoostEnabled"=dword:00000000
+
+; Disables Edge running in the background even after closed.
+"BackgroundModeEnabled"=dword:00000000
+
+; Limit: 1024 MB (1GB).
+"TotalMemoryLimitMb"=dword:00000400
+
+; Enables Efficiency Mode.
+"EfficiencyModeEnabled"=dword:00000001
+
+; Makes Efficiency Mode always active.
+"EfficiencyMode"=dword:00000000
+
+; Sleeping Tabs enabled.
+"SleepingTabsEnabled"=dword:00000001
+
+; Sleep Timeout: 30 seconds.
+"SleepingTabsTimeout"=dword:0000001e
+
+; Occlusion ~ "to reduce CPU and power consumption Microsoft Edge will detect when a window is covered by other windows, and will suspend work painting pixels."
+"WindowOcclusionEnabled"=dword:00000001
+
+; Set disk cache size Limit
+; - 150mb = 00025800
+; - 200mb = 00032000
+; - 300mb = 0004B000
+"DiskCacheSize"=dword:00025800
+
+
+; --- New Tab Page & Search/Web ---
+
+; Disables Microsoft content on the regular new tab page.
+"NewTabPageContentEnabled"=dword:00000000
+
+; Hides default top sites on regular new tab page.
+"NewTabPageHideDefaultTopSites"=dword:00000001
+
+; Redirects regular new tab page search box to address bar.
+"NewTabPageSearchBox"="redirect"
+
+; Disables web search suggestions in the Address Bar and Auto-Suggest List.
+"SearchSuggestEnabled"=dword:00000000
+
+; Disables local provider suggestions.
+"LocalProvidersEnabled"=dword:00000000
+
+; Disables trending suggestions in address bar.
+"AddressBarTrendingSuggestEnabled"=dword:00000000
+
+; Makes autosuggestion dropdown not display the ribbon of available filters.
+"SearchFiltersEnabled"=dword:00000000
+
+; Disables using browsing history to personalize the top sites.
+"PersonalizeTopSitesInCustomizeSidebarEnabled"=dword:00000000
+
+; Disables text predictions.
+"TextPredictionEnabled"=dword:00000000
+
+; Disables machine learning-powered autofill predictions.
+"EdgeAutofillMlEnabled"=dword:00000000
+
+; Prevents suggesting similar pages when a webpage can't be found
+"AlternateErrorPagesEnabled"=dword:00000000
+
+; Prevents using web service to resolve navigation errors
+"ResolveNavigationErrorsUseWebService"=dword:00000000
+
+; Disables regular new tab page prerendering.
+"NewTabPagePrerenderEnabled"=dword:00000000
+
+; Disable network prediction ~ DNS prefetching, TCP and SSL preconnection, & prerendering of web pages.
+"NetworkPredictionOptions"=dword:00000002
+
+; Block prefetch requests to ServiceWorker-controlled URLs.
+"PrefetchWithServiceWorkerEnabled"=dword:00000000
+
+
+; --- AI Features / Related ---
+
+; Disallow access to the built-in AI APIs, including the LanguageModel API, Summarization API, Writer API, and Rewriter API.
+"BuiltInAIAPIsEnabled"=dword:00000000
+
+; Disables foundational GenAI model download for local inference.
+"GenAILocalFoundationalModelSettings"=dword:00000001
+
+; Disables AI-powered history search.
+"EdgeHistoryAISearchEnabled"=dword:00000000
+
+; Disables AI-generated themes.
+"AIGenThemesEnabled"=dword:00000000
+
+; Stops features from downloading assets via the Asset Delivery Service ~ "These assets can be config files or Machine Learning models that power the features that use this service."
+; Note: Copilot button cannot be removed if edge was first loaded with this tweak. This needs to be removed first to be able to turn of the button.
+"EdgeAssetDeliveryServiceEnabled"=dword:00000000
+
+
+; --- Browser Features & Misc ---
+
+; Allows Manifest V2 extensions.
+; "ExtensionManifestV2Availability"=dword:00000002
+
+; Disables tab previews on hover (adjust in-browser).
+; "ShowTabPreviewEnabled"=dword:00000000
+
+; Disables history thumbnails.
+"ShowHistoryThumbnails"=dword:00000000
+
+; Disables Sidebar.
+"HubsSidebarEnabled"=dword:00000000
+
+; Disables Search Widget (More tools > Searchbar).
+"SearchbarAllowed"=dword:00000000
+
+; Disables Collections.
+"EdgeCollectionsEnabled"=dword:00000000
+
+; Disables Cast.
+"EnableMediaRouter"=dword:00000000
+
+; Disables Shopping Assistant.
+"EdgeShoppingAssistantEnabled"=dword:00000000
+
+; Disables Wallet Checkout feature for shopping.
+"EdgeWalletCheckoutEnabled"=dword:00000000
+
+; Disables the Wallet E-tree feature.
+"EdgeWalletEtreeEnabled"=dword:00000000
+
+; Disables Printing ~ can still print via plug-ins that bypass.
+"PrintingEnabled"=dword:00000000
+
+; Disables Microsoft Rewards.
+"ShowMicrosoftRewards"=dword:00000000
+
+; Disables Edge Feedback
+"UserFeedbackAllowed"=dword:00000000
+
+; Disables in-app Support features
+"InAppSupportEnabled"=dword:00000000
+
+; Disables Family Safety settings ~ "This will hide the Family page inside Settings and navigation to edge://settings/family will be blocked".
+"FamilySafetySettingsEnabled"=dword:00000000
+
+; Disables Insider channel promotion messages
+"MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
+
+; Disables default browser campaigns.
+"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
+
+; Disables getting customized background images and text, suggestions, notifications, and tips for Microsoft services.
+"SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
+
+; Disables feature recommendations and assistance notifications.
+"ShowRecommendationsEnabled"=dword:00000000
+
+; Disallows Edge from using system notifications
+"AllowSystemNotifications"=dword:00000000
+
+; Hides Adobe Acrobat subscription button on pdf viewer.
+"ShowAcrobatSubscriptionButton"=dword:00000000
+
+; Disables the tab organization service.
+"TabServicesEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
+
+; Prevents Edge Update from creating desktop shortcuts
+"CreateDesktopShortcutDefault"=dword:00000000
