@@ -177,7 +177,7 @@ Windows Registry Editor Version 5.00
 "PaymentMethodQueryEnabled"=dword:00000000
 
 ; Don't allow any site to request write access to files and directories.
-"DefaultFileSystemWriteGuardSetting"=dword:00000002
+; "DefaultFileSystemWriteGuardSetting"=dword:00000002
 
 
 ; --- Resource Control ---
@@ -351,4 +351,5 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 
 ; Prevents Edge Update from creating desktop shortcuts
+
 "CreateDesktopShortcutDefault"=dword:00000000
