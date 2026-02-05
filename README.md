@@ -38,6 +38,9 @@
     - https://www.youtube.com
     - https://dev.twitch.tv
     - https://www.twitch.tv
+	- https://ext-twitch.tv
+	- https://[*.]twitch.tv:443
+	- https://seelen.io
 
 - Set Edge ram usage limit to 1GB if not set > Always active.
 </details>
