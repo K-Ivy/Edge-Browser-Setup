@@ -71,7 +71,7 @@ Windows Registry Editor Version 5.00
 
 ; --- Security/Privacy Related  ---
 
-; Disables remote debugging
+; Disables remote debugging.
 "RemoteDebuggingAllowed"=dword:00000000
 
 ; - Restrict WebRTC local IP exposure:
@@ -158,31 +158,31 @@ Windows Registry Editor Version 5.00
 ; Disables all cookies (adjust in-browser).
 ; "DefaultCookiesSetting"=dword:00000002
 
-; Disables serial port access.
-"DefaultSerialGuardSetting"=dword:00000002
+; Disables serial port access (adjust in-browser).
+; "DefaultSerialGuardSetting"=dword:00000002
 
-; Disables USB devices access.
-"DefaultWebUsbGuardSetting"=dword:00000002
+; Disables USB devices access (adjust in-browser).
+; "DefaultWebUsbGuardSetting"=dword:00000002
 
 ; Disables Bluetooth devices access.
-"DefaultWebBluetoothGuardSetting"=dword:00000002
+; "DefaultWebBluetoothGuardSetting"=dword:00000002
 
 ; Disables HID devices access.
-"DefaultWebHidGuardSetting"=dword:00000002
+; "DefaultWebHidGuardSetting"=dword:00000002
 
 ; Disables idle detection.
-"DefaultIdleDetectionSetting"=dword:00000002
+; "DefaultIdleDetectionSetting"=dword:00000002
+
+; Disables site write access to files and directories (adjust in-browser).
+; "DefaultFileSystemWriteGuardSetting"=dword:00000002
 
 ; Disables site query for available payment methods.
 "PaymentMethodQueryEnabled"=dword:00000000
 
-; Don't allow any site to request write access to files and directories.
-; "DefaultFileSystemWriteGuardSetting"=dword:00000002
-
 
 ; --- Resource Control ---
 
-; Disables startup boost (pre-loading browser).
+; Disables startup boost.
 "StartupBoostEnabled"=dword:00000000
 
 ; Disables Edge running in the background even after closed.
@@ -351,5 +351,4 @@ Windows Registry Editor Version 5.00
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 
 ; Prevents Edge Update from creating desktop shortcuts
-
 "CreateDesktopShortcutDefault"=dword:00000000
