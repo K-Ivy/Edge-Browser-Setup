@@ -19,7 +19,7 @@ Windows Registry Editor Version 5.00
 
 ; --- Account & Sync ---
 
-; Default profile.
+; Profile to be used when opening the browser rather than the last profile used.
 "EdgeDefaultProfileEnabled"="Default"
 
 ; Prevents sign-on to Edge with OS MS account + stops account-related services like sync and SSO.
@@ -349,4 +349,3 @@ Windows Registry Editor Version 5.00
 
 ; Prevents Edge Update from creating desktop shortcuts
 "CreateDesktopShortcutDefault"=dword:00000000
-
