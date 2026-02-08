@@ -203,9 +203,6 @@ Windows Registry Editor Version 5.00
 ; Sleep Timeout: 30 seconds.
 "SleepingTabsTimeout"=dword:0000001e
 
-; Occlusion ~ "to reduce CPU and power consumption Microsoft Edge will detect when a window is covered by other windows, and will suspend work painting pixels."
-"WindowOcclusionEnabled"=dword:00000001
-
 ; Set disk cache size Limit
 ; - 150mb = 00025800
 ; - 200mb = 00032000
@@ -352,3 +349,4 @@ Windows Registry Editor Version 5.00
 
 ; Prevents Edge Update from creating desktop shortcuts
 "CreateDesktopShortcutDefault"=dword:00000000
+
