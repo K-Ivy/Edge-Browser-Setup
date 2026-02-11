@@ -8,6 +8,8 @@
  1. Enable "Developer mode" on the edge://extensions page,
  2. Drag the theme or extension folder onto the page or click "Load unpacked" and select.
 
+**Host File (Base)** > [Niutech Gist](https://gist.github.com/niutech/1f1c1518ce0eba7e8d429c812d39493d?permalink_comment_id=4837999#file-hosts)
+
 ---
 
 <details>
@@ -28,17 +30,10 @@
   - Main Exceptions:
     - https://discord.com
     - https://discordapp.com
-    - https://www.dropbox.com
     - https://github.com
     - https://gist.github.com
     - https://accounts.google.com
-    - https://developer.microsoft.com
-    - https://login.microsoftonline.com
-    - https://studio.youtube.com
-    - https://www.youtube.com
     - https://[*.]twitch.tv:443
-	- https://seelen.io
-    - https://[*.]vault.bitwarden.com:443
 
 - Set Edge ram usage limit to 1GB if not set > Always active.
 </details>
@@ -54,5 +49,4 @@
     - Vaft (Enabled) & Video Swap from [Twitch Ad Solutions](https://github.com/pixeltris/TwitchAdSolutions)
 
 - [UBlock Origin Lite](https://microsoftedge.microsoft.com/addons/detail/ublock-origin-lite/cimighlppcgcoapaliogpjjdehbnofhn)
-
 </details>
