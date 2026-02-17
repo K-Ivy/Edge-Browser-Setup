@@ -12,12 +12,12 @@
 # lines or following the machine name denoted by a '#' symbol.
 #
 # For example:
+#
 #      102.54.94.97     rhino.acme.com          # source server
 #       38.25.63.10     x.acme.com              # x client host
 #
 # > https://gist.github.com/niutech/1f1c1518ce0eba7e8d429c812d39493d?permalink_comment_id=4837999#file-hosts
-# -------------------------------------------------------
-# localhost name resolution is handled within DNS itself.
+# -------------------------------------------------
 # 127.0.0.1 localhost
 # ::1       localhost
 # 0.0.0.0   account.live.com
@@ -26,6 +26,7 @@
 # 0.0.0.0   login.microsoft.com
 # 0.0.0.0   outlook.live.com
 # 0.0.0.0   signup.live.com
+# 0.0.0.0   microsoftedge.microsoft.com - for store
   0.0.0.0   a-0001.a-msedge.net
   0.0.0.0   a-0002.a-msedge.net
   0.0.0.0   a-0003.a-msedge.net
@@ -41,6 +42,7 @@
   0.0.0.0   a.ads2.msn.com
   0.0.0.0   a.rad.msn.com
   0.0.0.0   ac3.msn.com
+  0.0.0.0   sb.scorecardresearch.com
   0.0.0.0   activity.microsoft.com
   0.0.0.0   ad.doubleclick.net
   0.0.0.0   adnexus.net
@@ -67,6 +69,7 @@
   0.0.0.0   browser.events.data.msn.com
   0.0.0.0   browser.events.data.microsoft.com
   0.0.0.0   browser.pipe.aria.microsoft.com
+  0.0.0.0   pipe.aria.microsoft.com
   0.0.0.0   bs.serving-sys.com
   0.0.0.0   business.bing.com
   0.0.0.0   c.atdmt.com
@@ -137,7 +140,6 @@
   0.0.0.0   m.hotmail.com
   0.0.0.0   manage.microsoft.com
   0.0.0.0   mathsolver.microsoft.com
-  0.0.0.0   microsoftedge.microsoft.com
   0.0.0.0   microsoftedgetips.microsoft.com
   0.0.0.0   microsoftedgewelcome.microsoft.com
   0.0.0.0   microsoftnews.msn.com
@@ -161,7 +163,6 @@
   0.0.0.0   pricelist.skype.com
   0.0.0.0   privacy.microsoft.com
   0.0.0.0   prod.rewardsplatform.microsoft.com
-  0.0.0.0   pipe.aria.microsoft.com
   0.0.0.0   rad.live.com
   0.0.0.0   rad.msn.com
   0.0.0.0   redir.metaservices.microsoft.com
@@ -170,7 +171,6 @@
   0.0.0.0   s.gateway.messenger.live.com
   0.0.0.0   s0.2mdn.net
   0.0.0.0   sO.2mdn.net
-  0.0.0.0   sb.scorecardresearch.com
   0.0.0.0   schemas.microsoft.akadns.net
   0.0.0.0   schemas.microsoft.com
   0.0.0.0   sdx.microsoft.com

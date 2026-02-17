@@ -22,29 +22,29 @@ Windows Registry Editor Version 5.00
 ; Profile to be used when opening the browser rather than the last profile used.
 "EdgeDefaultProfileEnabled"="Default"
 
-; Prevents sign-on to Edge with OS MS account + stops account-related services like sync and SSO.
+; Prevents sign-on to edge with os account + stops account-related services like sync and SSO.
 "BrowserSignin"=dword:00000000
 
-; Prevents sign-on to Microsoft personal sites using OS MS Account.
-"MSAWebSiteSSOUsingThisProfileAllowed"=dword:00000000
-
-; Disable sign-on to work/school sites using Edge profile.
-"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
-
-; Disables synchronization of data using Microsoft sync services.
+; Disables synchronization of data using sync services.
 "SyncDisabled"=dword:00000001
 
-; Disables sign-on on Microsoft sites signing into Edge with said MS account.
+; Prevents sign-on to microsoft personal sites using os account.
+"MSAWebSiteSSOUsingThisProfileAllowed"=dword:00000000
+
+; Disable sign-on to work/school sites using edge profile.
+"AADWebSiteSSOUsingThisProfileEnabled"=dword:00000000
+
+; Disables sign-on on microsoft sites signing into edge with said account.
 "WebToBrowserSignInEnabled"=dword:00000000
 "SeamlessWebToBrowserSignInEnabled"=dword:00000000
 
-; Disables proactive authentication ~ "connects the signed-in user identity with Microsoft Bing, MSN and Copilot services for a smooth and consistent sign-in experience".
+; Disables proactive authentication ~ "...connects the signed-in user identity with Microsoft Bing, MSN and Copilot services for a smooth and consistent sign-in experience."
 "ProactiveAuthWorkflowEnabled"=dword:00000000
 
-; Disallows prompts to switch to appropriate profile when Edge detects a personal or work link.
+; Disallows prompts to switch to appropriate profile when edge detects a personal or work link.
 "GuidedSwitchEnabled"=dword:00000000
 
-; Disables roaming profile support ~ "The settings stored in Microsoft Edge profiles (favorites and preferences) are also saved to a file stored in the Roaming user profile folder".
+; Disables roaming profile support ~ settings stored in profiles saved to file stored in the roaming user profile folder.
 "RoamingProfileSupportEnabled"=dword:00000000
 
 
@@ -56,16 +56,16 @@ Windows Registry Editor Version 5.00
 ; Disables personalization data reporting.
 "PersonalizationReportingEnabled"=dword:00000000
 
-; Disables third-party search engine results page telemetry ~ "Captures the searches that a user does on third-party search providers without identifying the person".
+; Disables third-party search engine results page telemetry ~ "...captures the searches that a user does on third-party search providers without identifying the person."
 "Edge3PSerpTelemetryEnabled"=dword:00000000
 
-; Disallow windows indexing Edge browsing data stored locally on device for searching.
+; Disallow windows indexing edge browsing data stored locally on device for searching.
 "LocalBrowserDataShareEnabled"=dword:00000000
 
 ; Disables experimentation and A/B testing service.
 "ExperimentationAndConfigurationServiceControl"=dword:00000000
 
-; Dont share the OS Regional format.
+; Dont share the os regional format.
 "DefaultShareAdditionalOSRegionSetting"=dword:00000002
 
 
@@ -74,36 +74,33 @@ Windows Registry Editor Version 5.00
 ; Disables remote debugging.
 "RemoteDebuggingAllowed"=dword:00000000
 
-; - Restrict WebRTC local IP exposure:
+; Disables developer tools.
+; "DeveloperToolsAvailability"=dword:00000002
+
+; Restrict WebRTC local IP exposure:
 ;   default_public_interface_only >
-;     - Does not expose local IP address,
-;     - Allows WebRTC over UDP on public interface only,
-;     - Works with most video conferencing apps.
+;     - Allows WebRTC over UDP on public interface only.
 ;   disable_non_proxied_udp >
-;     - Does not expose local IP address,
 ;     - Forces TCP unless proxy supports UDP.
 "WebRtcLocalhostIpHandling"="default_public_interface_only"
 
-; Disables exceptions for the associated ad providers that have met Microsoft's privacy standards (balanced mode).
-"AdsTransparencyEnabled"=dword:00000000
-
-; Disable developer tools
-; "DeveloperToolsAvailability"=dword:00000002
-
-; - Tracking prevention level (adjust in-browser):
+; - Tracking prevention level:
 ;   0=Off
 ;   1=Basic
 ;   2=Balanced
 ;   3=Strict
-; "TrackingPrevention"=dword:00000003
+"TrackingPrevention"=dword:00000003
 
-; Prevent bypassing of SmartScreen prompts for sites.
+; Disables balanced mode tracking prevention exceptions for providers that have met microsoft's privacy standards.
+"AdsTransparencyEnabled"=dword:00000000
+
+; Prevent bypassing of smartscreen prompts for sites.
 ; "PreventSmartScreenPromptOverride"=dword:00000001
 
-; Prevent bypassing of SmartScreen warnings about downloads.
+; Prevent bypassing of smartscreen warnings about downloads.
 ; "PreventSmartScreenPromptOverrideForFiles"=dword:00000001
 
-; - Https-Only Mode: (enable in-browser).
+; Enables Https-Only mode: (adjust in-browser):
 ;   allowed >
 ;     - Don't restrict users' HTTPS-Only Mode setting
 ;   disallowed >
@@ -115,30 +112,21 @@ Windows Registry Editor Version 5.00
 ; "HttpsOnlyMode"="force_enabled"
 ; "HttpsUpgradesEnabled"=dword:00000001
 
-; - DNS-over-HTTPS:
-;   Note: Edge disables the in-browser toggle if any registry tweak
-;   is applied so would need to apply via the below.
+; Enables DNS-over-HTTPS:
+; Note: Edge disables the in-browser toggle if any registry tweak
+; is applied so would need to apply via the below.
 ;     off       = Disable DNS-over-HTTPS
 ;     automatic = Enable DoH with insecure fallback
 ;     secure    = Enable DoH only (no fallback)
 ; "DnsOverHttpsMode"="secure"
-;
-; Some DNS:
-;
-; Quad9 (Malware + Privacy)
-; "DnsOverHttpsTemplates"="https://dns.quad9.net/dns-query"
-;
-; AdGuard (Filtered)
-; "DnsOverHttpsTemplates"="https://dns.adguard-dns.com/dns-query"
-;
-; Cloudflare
+
+; Sets to be used DNS.
 ; "DnsOverHttpsTemplates"="https://cloudflare-dns.com/dns-query"
-;
-; Cloudflare (Malware Protection)
-; "DnsOverHttpsTemplates"="https://security.cloudflare-dns.com/dns-query"
 
 
 ; --- Site Permissions ---
+
+; Note: Most not set here as it is not possible to add exceptions in-browser if done.
 
 ; Disables location access (adjust in-browser).
 ; "DefaultGeolocationSetting"=dword:00000002
@@ -149,10 +137,10 @@ Windows Registry Editor Version 5.00
 ; Disables notification access (adjust in-browser).
 ; "DefaultNotificationsSetting"=dword:00000002
 
-; Disables JavaScript (adjust in-browser).
+; Disables javaScript (adjust in-browser).
 ; "DefaultJavaScriptSetting"=dword:00000002
 
-; Disables Images (adjust in-browser).
+; Disables images (adjust in-browser).
 ; "DefaultImagesSetting"=dword:00000002
 
 ; Disables all cookies (adjust in-browser).
@@ -161,20 +149,20 @@ Windows Registry Editor Version 5.00
 ; Disables serial port access (adjust in-browser).
 ; "DefaultSerialGuardSetting"=dword:00000002
 
-; Disables USB devices access (adjust in-browser).
+; Disables usb devices access (adjust in-browser).
 ; "DefaultWebUsbGuardSetting"=dword:00000002
 
-; Disables Bluetooth devices access.
+; Disables bluetooth devices access (adjust in-browser).
 ; "DefaultWebBluetoothGuardSetting"=dword:00000002
 
-; Disables HID devices access.
+; Disables hid devices access (adjust in-browser).
 ; "DefaultWebHidGuardSetting"=dword:00000002
-
-; Disables idle detection.
-; "DefaultIdleDetectionSetting"=dword:00000002
 
 ; Disables site write access to files and directories (adjust in-browser).
 ; "DefaultFileSystemWriteGuardSetting"=dword:00000002
+
+; Disables idle detection.
+"DefaultIdleDetectionSetting"=dword:00000002
 
 ; Disables site query for available payment methods.
 "PaymentMethodQueryEnabled"=dword:00000000
@@ -182,28 +170,30 @@ Windows Registry Editor Version 5.00
 
 ; --- Resource Control ---
 
-; Disables startup boost.
+; Disables startup boost (starting on boot).
 "StartupBoostEnabled"=dword:00000000
 
-; Disables Edge running in the background even after closed.
+; Disables edge running in background after close.
 "BackgroundModeEnabled"=dword:00000000
 
-; Limit: 1024 MB (1GB).
-"TotalMemoryLimitMb"=dword:00000400
-
-; Enables Efficiency Mode.
+; Enables efficiency mode.
 "EfficiencyModeEnabled"=dword:00000001
 
-; Makes Efficiency Mode always active.
+; Makes efficiency mode always active.
 "EfficiencyMode"=dword:00000000
 
-; Sleeping Tabs enabled.
+; Enables sleeping tabs.
 "SleepingTabsEnabled"=dword:00000001
 
-; Sleep Timeout: 30 seconds.
+; Tab timeout: 30 seconds.
 "SleepingTabsTimeout"=dword:0000001e
 
-; Set disk cache size Limit
+; Set memory limit:
+; - 1024 MB (1GB) = 00000400
+; Note: This is not a hard limit, it's more of a suggestion.
+"TotalMemoryLimitMb"=dword:00000400
+
+; Set disk cache size Limit:
 ; - 150mb = 00025800
 ; - 200mb = 00032000
 ; - 300mb = 0004B000
@@ -221,7 +211,7 @@ Windows Registry Editor Version 5.00
 ; Redirects regular new tab page search box to address bar.
 "NewTabPageSearchBox"="redirect"
 
-; Disables web search suggestions in the Address Bar and Auto-Suggest List.
+; Disables web search suggestions in the address bar and auto-suggest list.
 "SearchSuggestEnabled"=dword:00000000
 
 ; Disables local provider suggestions.
@@ -242,38 +232,38 @@ Windows Registry Editor Version 5.00
 ; Disables machine learning-powered autofill predictions.
 "EdgeAutofillMlEnabled"=dword:00000000
 
-; Prevents suggesting similar pages when a webpage can't be found
+; Prevents suggesting similar pages when a webpage can't be found.
 "AlternateErrorPagesEnabled"=dword:00000000
 
-; Prevents using web service to resolve navigation errors
+; Prevents using web service to resolve navigation errors.
 "ResolveNavigationErrorsUseWebService"=dword:00000000
 
-; Disables regular new tab page prerendering.
+; Disables new tab page prerendering.
 "NewTabPagePrerenderEnabled"=dword:00000000
 
 ; Disable network prediction ~ DNS prefetching, TCP and SSL preconnection, & prerendering of web pages.
 "NetworkPredictionOptions"=dword:00000002
 
-; Block prefetch requests to ServiceWorker-controlled URLs.
+; Disable speculative prefetching for pages that have a serviceworker.
 "PrefetchWithServiceWorkerEnabled"=dword:00000000
 
 
 ; --- AI Features / Related ---
 
-; Disallow access to the built-in AI APIs, including the LanguageModel API, Summarization API, Writer API, and Rewriter API.
+; Disallow access to the built-in ai apis, including the LanguageModel API, Summarization API, Writer API, and Rewriter API.
 "BuiltInAIAPIsEnabled"=dword:00000000
 
-; Disables foundational GenAI model download for local inference.
+; Disables foundational gen-ai model download for local inference.
 "GenAILocalFoundationalModelSettings"=dword:00000001
 
-; Disables AI-powered history search.
+; Disables ai-powered history search.
 "EdgeHistoryAISearchEnabled"=dword:00000000
 
-; Disables AI-generated themes.
+; Disables ai-generated themes.
 "AIGenThemesEnabled"=dword:00000000
 
-; Stops features from downloading assets via the Asset Delivery Service ~ "These assets can be config files or Machine Learning models that power the features that use this service."
-; Note: Copilot button cannot be removed if edge was first loaded with this tweak. This needs to be removed first to be able to turn of the button.
+; Stops certain features from downloading assets ~ "...can be config files or machine learning models..."
+; Note: Copilot button likely cannot be removed if edge is first loaded with this tweak (relevant settings menu not loadable - in which case, this must be removed first).
 "EdgeAssetDeliveryServiceEnabled"=dword:00000000
 
 
@@ -282,53 +272,69 @@ Windows Registry Editor Version 5.00
 ; Allows Manifest V2 extensions.
 ; "ExtensionManifestV2Availability"=dword:00000002
 
-; Disables tab previews on hover (adjust in-browser).
-; "ShowTabPreviewEnabled"=dword:00000000
+; Disables tab previews on hover.
+"ShowTabPreviewEnabled"=dword:00000000
+
+; Disables visual search.
+"VisualSearchEnabled"=dword:00000000
+
+; Disables spellcheck.
+"SpellcheckEnabled"=dword:00000000
+
+; Disables edge as default check/prompt.
+"DefaultBrowserSettingEnabled"=dword:00000000
+"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
 
 ; Disables history thumbnails.
 "ShowHistoryThumbnails"=dword:00000000
 
-; Disables Sidebar.
+; Disables sidebar.
 "HubsSidebarEnabled"=dword:00000000
 
-; Disables Search Widget (More tools > Searchbar).
+; Disables search widget (More tools > Searchbar).
 "SearchbarAllowed"=dword:00000000
 
-; Disables Collections.
+; Disables collections.
 "EdgeCollectionsEnabled"=dword:00000000
 
-; Disables Cast.
+; Disables cast.
 "EnableMediaRouter"=dword:00000000
 
-; Disables Shopping Assistant.
+; Disables shopping assistant.
 "EdgeShoppingAssistantEnabled"=dword:00000000
 
-; Disables Wallet Checkout feature for shopping.
+; Disables wallet checkout feature for shopping.
 "EdgeWalletCheckoutEnabled"=dword:00000000
 
-; Disables the Wallet E-tree feature.
+; Disables the wallet e-tree feature.
 "EdgeWalletEtreeEnabled"=dword:00000000
 
-; Disables Printing ~ can still print via plug-ins that bypass.
+; Disables the built-in password manager.
+"PasswordManagerEnabled"=dword:00000000
+
+; Disables autofill for credit cards.
+"AutofillCreditCardEnabled"=dword:00000000
+
+; Disables autofill for addresses.
+"AutofillAddressEnabled"=dword:00000000
+
+; Disables printing (can be bypassed by extensions).
 "PrintingEnabled"=dword:00000000
 
-; Disables Microsoft Rewards.
+; Disables microsoft rewards.
 "ShowMicrosoftRewards"=dword:00000000
 
-; Disables Edge Feedback
+; Disables edge feedback.
 "UserFeedbackAllowed"=dword:00000000
 
-; Disables in-app Support features
+; Disables in-app support features.
 "InAppSupportEnabled"=dword:00000000
 
-; Disables Family Safety settings ~ "This will hide the Family page inside Settings and navigation to edge://settings/family will be blocked".
+; Disables family safety settings.
 "FamilySafetySettingsEnabled"=dword:00000000
 
-; Disables Insider channel promotion messages
+; Disables insider channel promotion messages.
 "MicrosoftEdgeInsiderPromotionEnabled"=dword:00000000
-
-; Disables default browser campaigns.
-"DefaultBrowserSettingsCampaignEnabled"=dword:00000000
 
 ; Disables getting customized background images and text, suggestions, notifications, and tips for Microsoft services.
 "SpotlightExperiencesAndRecommendationsEnabled"=dword:00000000
@@ -336,10 +342,10 @@ Windows Registry Editor Version 5.00
 ; Disables feature recommendations and assistance notifications.
 "ShowRecommendationsEnabled"=dword:00000000
 
-; Disallows Edge from using system notifications
+; Disables system notifications
 "AllowSystemNotifications"=dword:00000000
 
-; Hides Adobe Acrobat subscription button on pdf viewer.
+; Removes adobe subscription button on pdf viewer.
 "ShowAcrobatSubscriptionButton"=dword:00000000
 
 ; Disables the tab organization service.
@@ -347,5 +353,5 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate]
 
-; Prevents Edge Update from creating desktop shortcuts
+; Prevents updates from creating shortcuts
 "CreateDesktopShortcutDefault"=dword:00000000

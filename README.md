@@ -10,21 +10,19 @@
 
 **Host File (Base)** > [Niutech Gist](https://gist.github.com/niutech/1f1c1518ce0eba7e8d429c812d39493d?permalink_comment_id=4837999#file-hosts)
 
+ - Open "C:\Windows\System32\drivers\etc\hosts" in a text edior with admin privileges and update.
+
 ---
 
 <details>
 <summary><strong>Main In-Browser Settings</strong></summary>
-
-- Disable Password, Payment, and Addresses save.
-
-- Set Tracking Prevention to `Strict`.
 
 - Enable Automatic HTTPS > Set alerts for both public and private sites.
 
 - Disable JavaScript, Images, Background Sync, Payment Handlers by default (alongside relevant others).
   - Add exceptions as needed.
 
-- Disables all cookies by default.
+- Disable all cookies by default.
   - Add exceptions as needed.
 
   - Main Exceptions:
@@ -35,7 +33,6 @@
     - https://accounts.google.com
     - https://[*.]twitch.tv:443
 
-- Set Edge ram usage limit to 1GB if not set > Always active.
 </details>
 
 <details>
