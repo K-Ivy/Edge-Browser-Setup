@@ -20,13 +20,8 @@
 # -------------------------------------------------
 # 127.0.0.1 localhost
 # ::1       localhost
-# 0.0.0.0   account.live.com
-# 0.0.0.0   account.microsoft.com
-# 0.0.0.0   login.live.com
-# 0.0.0.0   login.microsoft.com
-# 0.0.0.0   outlook.live.com
-# 0.0.0.0   signup.live.com
 # 0.0.0.0   microsoftedge.microsoft.com - for store
+# 0.0.0.0   edge.microsoft.com - for store
   0.0.0.0   a-0001.a-msedge.net
   0.0.0.0   a-0002.a-msedge.net
   0.0.0.0   a-0003.a-msedge.net
@@ -105,7 +100,6 @@
   0.0.0.0   edge-staging.microsoft.com
   0.0.0.0   edge-test.microsoft.com
   0.0.0.0   edge.cloudbrowser.microsoft.com
-  0.0.0.0   edge.microsoft.com
   0.0.0.0   edgeservices.bing.com
   0.0.0.0   edgeshoppingstatic.azureedge.net
   0.0.0.0   edgesync.microsoft.com
@@ -229,3 +223,9 @@
   0.0.0.0   www.msftncsi.com
   0.0.0.0   www.msn.com
   0.0.0.0   xpay-int.microsoft.com
+  0.0.0.0   account.live.com
+  0.0.0.0   account.microsoft.com
+  0.0.0.0   login.live.com
+  0.0.0.0   login.microsoft.com
+  0.0.0.0   outlook.live.com
+  0.0.0.0   signup.live.com
